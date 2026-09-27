@@ -207,6 +207,38 @@ h3 { font-size: 32px; }
   0%, 100% { box-shadow: 0 0 14px rgba(214,255,61,0.22); }
   50% { box-shadow: 0 0 26px rgba(214,255,61,0.55); }
 }
+.scrub {
+  position: relative;
+  height: 280vh;
+  background: #000;
+}
+.scrub-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+.scrub-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  pointer-events: none;
+}
+.scrub-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+}
+.scrub-copy {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 110px;
+  z-index: 1;
+}
 .section { padding: 52px 0; }
 .section.alt {
   background: var(--bg-2);
@@ -301,6 +333,10 @@ footer a:hover { color: var(--neon); }
     box-shadow: 0 12px 40px rgba(214,255,61,0.08);
   }
   .results figure:hover img { transform: scale(1.03); }
+  .scrub-copy {
+    left: max(16px, calc((100% - 1100px) / 2));
+    bottom: 56px;
+  }
 }
 @media (max-width: 819px) {
   .mobile-cta { display: flex; }
@@ -338,4 +374,6 @@ footer a:hover { color: var(--neon); }
   .hero-in { opacity: 1; transform: none; }
   .card:hover,
   .results figure:hover img { transform: none; }
+  .scrub { height: auto; }
+  .scrub-sticky { position: relative; height: 70vh; }
 }
