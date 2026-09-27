@@ -13,6 +13,7 @@ document.getElementById("site-header").innerHTML = `
       <a class="brand" href="index.html">Exalted <span>Coaching</span></a>
       <nav class="desk-nav">
         <a href="index.html" class="${page === "index.html" ? "active" : ""}">Home</a>
+        <a href="#codes">Codes</a>
         <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
         <a href="${WA}" target="_blank" rel="noreferrer">WhatsApp</a>
       </nav>
@@ -22,6 +23,7 @@ document.getElementById("site-header").innerHTML = `
   <div class="mobile-nav" hidden>
     <nav>
       <a href="index.html">Home</a>
+      <a href="#codes">Codes</a>
       <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
       <a href="${TT}" target="_blank" rel="noreferrer">TikTok</a>
       <a href="${YT}" target="_blank" rel="noreferrer">YouTube</a>
@@ -45,6 +47,7 @@ document.getElementById("site-footer").innerHTML = `
       <div>
         <p><a href="${WA}" target="_blank" rel="noreferrer">WhatsApp</a></p>
         <p><a href="${FORM}" target="_blank" rel="noreferrer">Enquiry form</a></p>
+        <p><a href="#codes">Codes</a></p>
       </div>
       <div>
         <p><a href="${IG}" target="_blank" rel="noreferrer">Instagram</a></p>
@@ -67,4 +70,11 @@ btn.addEventListener("click", () => {
     nav.removeAttribute("hidden");
     document.body.classList.add("menu-open");
   }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.setAttribute("hidden", "");
+    document.body.classList.remove("menu-open");
+  });
 });
