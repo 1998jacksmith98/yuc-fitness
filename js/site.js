@@ -13,6 +13,7 @@ document.getElementById("site-header").innerHTML = `
       <a class="brand" href="index.html">Exalted <span>Coaching</span></a>
       <nav class="desk-nav">
         <a href="index.html" class="${page === "index.html" ? "active" : ""}">Home</a>
+        <a href="#clients">Clients</a>
         <a href="#codes">Codes</a>
         <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
         <a href="${WA}" target="_blank" rel="noreferrer">WhatsApp</a>
@@ -23,6 +24,7 @@ document.getElementById("site-header").innerHTML = `
   <div class="mobile-nav" hidden>
     <nav>
       <a href="index.html">Home</a>
+      <a href="#clients">Clients</a>
       <a href="#codes">Codes</a>
       <a href="${IG}" target="_blank" rel="noreferrer">Instagram</a>
       <a href="${TT}" target="_blank" rel="noreferrer">TikTok</a>
@@ -47,6 +49,7 @@ document.getElementById("site-footer").innerHTML = `
       <div>
         <p><a href="${WA}" target="_blank" rel="noreferrer">WhatsApp</a></p>
         <p><a href="${FORM}" target="_blank" rel="noreferrer">Enquiry form</a></p>
+        <p><a href="#clients">Clients</a></p>
         <p><a href="#codes">Codes</a></p>
       </div>
       <div>
