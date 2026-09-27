@@ -1,0 +1,10 @@
+filename | post URL | carousel slide number | brief description
+comparison-01.jpg | https://www.instagram.com/p/DakfLw5iEWr/ | 2 | Split-screen front relaxed comparison: heavier/earlier physique at left and leaner later physique at right, EXALTED branding.
+comparison-02.jpg | https://www.instagram.com/p/DakfLw5iEWr/ | 3 | Split-screen front double-biceps comparison, earlier physique left and leaner/more muscular later physique right.
+comparison-03.jpg | https://www.instagram.com/p/DakfLw5iEWr/ | 4 | Split-screen back double-biceps comparison, earlier physique left and developed later physique right.
+yucel-comparison.jpg | https://www.instagram.com/p/DFdRfp-os4X/ | 1 | Split-screen full-body front comparison of a braided athlete, earlier pose at left and more muscular stage-style image at right.
+comparisons-2-01.jpg | https://www.instagram.com/p/C_YhXW_oVmC/ | 2 | Split-screen full-body front comparison: younger/slimmer subject at left and later flexing gym portrait at right.
+comparisons-2-02.jpg | https://www.instagram.com/p/C_YhXW_oVmC/ | 3 | Split-screen side-chest comparison: earlier image at left and later side pose at right.
+comparisons-2-03.jpg | https://www.instagram.com/p/C_YhXW_oVmC/ | 4 | Split-screen back double-biceps comparison: earlier image at left and later muscular portrait at right.
+comparisons-3.jpg | https://www.instagram.com/p/C_ORIJpoX2B/ | 4 | Split-screen back comparison, earlier softer back at left and broader/more defined back at right.
+comparisons-4.jpg | https://www.instagram.com/p/C_ORIJpoX2B/ | 3 | Split-screen front double-biceps comparison, earlier slimmer image at left and later muscular gym image at right.
