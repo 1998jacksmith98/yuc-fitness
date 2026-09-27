@@ -190,6 +190,17 @@ h3 { font-size: 32px; }
 }
 .split { display: grid; gap: 28px; }
 .copy p { margin: 12px 0 0; color: #cfcfcf; }
+.include-list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+.include-list li {
+  color: #e8e8e8;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 16px;
+}
 .photo-frame {
   margin: 0;
   overflow: hidden;
