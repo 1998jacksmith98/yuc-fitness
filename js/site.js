@@ -116,24 +116,33 @@ if (!reduce) {
   const video = document.querySelector(".scrub-video");
   if (!track || !video) return;
 
-  video.pause();
   video.muted = true;
-  const ready = () => {
-    try { video.pause(); } catch (e) {}
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+
+  const arm = () => {
+    const play = video.play();
+    if (play && play.then) {
+      play.then(() => {
+        video.pause();
+      }).catch(() => {});
+    }
   };
-  video.addEventListener("loadedmetadata", ready);
-  video.addEventListener("canplay", ready);
+
+  video.addEventListener("loadeddata", arm, { once: true });
+  window.addEventListener("touchstart", arm, { once: true, passive: true });
+  window.addEventListener("click", arm, { once: true });
 
   let ticking = false;
   const update = () => {
     ticking = false;
+    if (!video.duration) return;
     const rect = track.getBoundingClientRect();
     const run = track.offsetHeight - window.innerHeight;
-    if (run <= 0 || !video.duration) return;
+    if (run <= 0) return;
     const scrolled = Math.min(Math.max(-rect.top, 0), run);
-    const p = scrolled / run;
-    const t = p * (video.duration - 0.04);
-    if (Math.abs(video.currentTime - t) > 0.02) {
+    const t = (scrolled / run) * Math.max(video.duration - 0.05, 0);
+    if (Math.abs(video.currentTime - t) > 0.03) {
       try { video.currentTime = t; } catch (e) {}
     }
   };

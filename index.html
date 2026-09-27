@@ -28,9 +28,17 @@
 
   <section class="scrub" id="scrub">
     <div class="scrub-sticky">
-      <video class="scrub-video" muted playsinline preload="auto" disablepictureinpicture>
-        <source src="videos/Yuc-scrub.mp4" type="video/mp4" />
-      </video>
+      <img class="scrub-fallback" src="photos/set-08.jpg" alt="" />
+      <video
+        class="scrub-video"
+        src="videos/Yuc-scrub.mp4?v=3"
+        poster="photos/set-08.jpg"
+        muted
+        autoplay
+        playsinline
+        webkit-playsinline
+        preload="auto"
+      ></video>
       <div class="scrub-shade"></div>
       <div class="scrub-copy">
         <p class="kicker">Scroll</p>
