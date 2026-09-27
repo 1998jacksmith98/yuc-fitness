@@ -265,14 +265,14 @@ footer a:hover { color: var(--neon); }
   .hero {
     min-height: 0;
     height: min(420px, calc(100svh - 210px));
-    align-items: center;
+    align-items: flex-end;
   }
   .hero-img {
-    object-position: center 82%;
-    transform: scale(1.35);
-    transform-origin: center 80%;
+    object-fit: contain;
+    object-position: center center;
+    transform: none;
   }
-  .hero-copy { padding: 8px 0; }
+  .hero-copy { padding: 8px 0 12px; }
   h1 { font-size: clamp(40px, 13vw, 64px); }
   .hero p { font-size: 14px; line-height: 1.4; }
 }
