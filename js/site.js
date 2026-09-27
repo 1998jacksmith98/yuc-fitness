@@ -81,3 +81,32 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     document.body.classList.remove("menu-open");
   });
 });
+
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reduce) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        io.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -10% 0px" }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  document.querySelectorAll("[data-stagger]").forEach((parent) => {
+    [...parent.children].forEach((child, i) => {
+      child.classList.add("reveal");
+      child.style.transitionDelay = `${80 + i * 90}ms`;
+      io.observe(child);
+    });
+  });
+} else {
+  document.querySelectorAll(".reveal, [data-stagger] > *").forEach((el) => {
+    el.classList.add("is-in");
+  });
+}
