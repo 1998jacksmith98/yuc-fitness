@@ -269,9 +269,9 @@ footer a:hover { color: var(--neon); }
   }
   .hero-img {
     object-fit: cover;
-    object-position: center 72%;
-    transform: scale(1.55);
-    transform-origin: center 78%;
+    object-position: center 60%;
+    transform: scale(1.32);
+    transform-origin: center 62%;
   }
   .hero-copy { padding: 8px 0 12px; }
   h1 { font-size: clamp(40px, 13vw, 64px); }
