@@ -110,3 +110,41 @@ if (!reduce) {
     el.classList.add("is-in");
   });
 }
+
+(function scrub() {
+  const track = document.querySelector(".scrub");
+  const video = document.querySelector(".scrub-video");
+  if (!track || !video) return;
+
+  video.pause();
+  video.muted = true;
+  const ready = () => {
+    try { video.pause(); } catch (e) {}
+  };
+  video.addEventListener("loadedmetadata", ready);
+  video.addEventListener("canplay", ready);
+
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const rect = track.getBoundingClientRect();
+    const run = track.offsetHeight - window.innerHeight;
+    if (run <= 0 || !video.duration) return;
+    const scrolled = Math.min(Math.max(-rect.top, 0), run);
+    const p = scrolled / run;
+    const t = p * (video.duration - 0.04);
+    if (Math.abs(video.currentTime - t) > 0.02) {
+      try { video.currentTime = t; } catch (e) {}
+    }
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  video.addEventListener("loadedmetadata", update);
+})();
