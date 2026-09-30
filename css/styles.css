@@ -351,6 +351,7 @@ footer a:hover { color: var(--neon); }
   }
 }
 @media (max-width: 819px) {
+  .hero .btn-row { display: none; }
   .mobile-cta { display: flex; }
   body { padding-bottom: 84px; }
   .hero {
